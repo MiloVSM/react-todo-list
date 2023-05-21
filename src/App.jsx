@@ -2,8 +2,12 @@ import { useEffect, useState } from "react"
 import "./styles.css"
 import { NewTodoForm } from "./NewToDoForm"
 import { TodoList } from "./TodoList"
+import { useTranslation } from "react-i18next"
+import './i18n/index.js'
 
 export default function App() {
+  const { t } = useTranslation()
+
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
     if (localValue == null) return []
@@ -44,7 +48,7 @@ export default function App() {
   return (
     <>
     <NewTodoForm onSubmit={addTodo}/>
-    <h1 className="header">Lista de Tarefas</h1>
+    <h1 className="header">{t('titleList')}</h1>
     <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
     </>
   )

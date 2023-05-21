@@ -1,0 +1,8 @@
+{
+    "translation": {
+        "titleList": "Lista de Tarefas",
+        "noTodoTxt": "Sem tarefas no momento",
+        "newItemTxt": "Novo Item",
+        "deleteBtn": "Excluir"
+    }
+}

@@ -1,4 +1,7 @@
-export function TodoItem ({completed, id, title, toggleTodo, deleteTodo}) {
+import { useTranslation } from "react-i18next"
+
+export function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
+    const { t } = useTranslation()
     return (
         <li>
             <label>
@@ -9,7 +12,7 @@ export function TodoItem ({completed, id, title, toggleTodo, deleteTodo}) {
             </label>
             <button 
             onClick={() => deleteTodo(id)} 
-            className="btn btn-danger">Excluir
+            className="btn btn-danger">{t('deleteBtn')}
             </button>
         </li>
     )
